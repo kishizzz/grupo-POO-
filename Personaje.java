@@ -1,5 +1,4 @@
-// Hola
-public abstract class Personaje {
+public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo, Alonso Gonzalez y Samuel
     private final String nombre; 
     private int puntosDeVida; 
     private int puntosDeMana; 

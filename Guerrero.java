@@ -1,3 +1,3 @@
-public class Guerrero {
+public class Guerrero { // Hecho por Alex Almonacid, Krishna Gallardo, Alonso Gonzalez y Samuel
     
 }
