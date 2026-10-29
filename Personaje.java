@@ -1,4 +1,4 @@
-
+// Hola
 public abstract class Personaje {
     private final String nombre; 
     private int puntosDeVida; 
