@@ -4,6 +4,8 @@ public class Sanador extends Personaje{ // Hecho por Alex Almonacid, Krishna Gal
         super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa);
     }
 
+    // Metodos
+
     @Override 
     public void ejecutarAccion(Personaje objetivo){
         objetivo.curarAliado(getPoderBase()); // Cura a un aliado

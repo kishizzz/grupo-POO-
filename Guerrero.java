@@ -3,6 +3,8 @@ public class Guerrero extends Personaje{ // Hecho por Alex Almonacid, Krishna Ga
         super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa);
     }
 
+    // Metodos
+
     @Override 
     public void ejecutarAccion(Personaje objetivo){
         objetivo.recibirDaño(getPoderBase()); // le hace daño al objetivo seleccionado

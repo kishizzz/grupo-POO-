@@ -6,9 +6,13 @@ public class Mago extends Personaje{ // Hecho por Alex Almonacid, Krishna Gallar
         this.costoMana = costoMana;
     }
 
+    // Getters
+
     public int getCostoMana(){
         return this.costoMana;
     }
+
+    // Metodos
 
     @Override 
     public void ejecutarAccion(Personaje objetivo){
