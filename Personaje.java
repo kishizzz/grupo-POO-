@@ -1,5 +1,5 @@
 
-public abstract class Personaje {
+public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo y Alonso Gonzalez
     private final String nombre; 
     private int puntosDeVida; 
     private int puntosDeMana; 
@@ -20,6 +20,8 @@ public abstract class Personaje {
         this.vidaMax = puntosDeVida;
     }
 
+    // Getters
+
     public String getNombre(){
         return nombre; 
     }
@@ -35,6 +37,8 @@ public abstract class Personaje {
     protected int getPoderBase(){
         return poderBase + bonoAtaque; 
     }
+
+    // Metodos
 
     public abstract void ejecutarAccion(Personaje objetivo); 
    
@@ -75,6 +79,10 @@ public abstract class Personaje {
     public void limpiarBonos(){
         bonoAtaque = 0; 
         bonoDefensa=0; 
+    }
+
+    public boolean estaVivo(){ // Se necesita saber si cada personaje esta vivo para ver si termina la partida
+    return puntosDeVida > 0;
     }
 }
 
