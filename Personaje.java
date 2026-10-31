@@ -93,7 +93,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     return puntosDeVida > 0;
     }
 
-    public boolean tieneItem(){
+    public boolean tieneItem(){ // Verifica si tiene item
         return objetoEquipado != null;
     }
 }
