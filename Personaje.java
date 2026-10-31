@@ -62,9 +62,15 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     }
 
     public void curarAliado (int vidaEnviada){
-        puntosDeVida= vidaEnviada + puntosDeVida; 
-        if (puntosDeVida > vidaMax){
+        if (puntosDeVida <= 0){ // Primero pregunta si el personaje tiene 0 de vida y si no, procede a curarlo
+            System.out.println("¡No ha hecho efecto!");
+        }
+        else{
+            puntosDeVida= vidaEnviada + puntosDeVida; 
+            if (puntosDeVida > vidaMax){
             puntosDeVida = vidaMax; 
+            }
+
         }
     }
 
