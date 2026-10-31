@@ -8,8 +8,9 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     private int bonoDefensa; 
     private int bonoAtaque; 
     private final int vidaMax; 
+    private Item objetoEquipado;
 
-    public Personaje (String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa){
+    public Personaje (String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa, Item objetoEquipado){
         this.nombre = nombre; 
         this.puntosDeVida = puntosDeVida; 
         this.puntosDeMana = puntosDeMana; 
@@ -18,6 +19,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         this.bonoDefensa = 0; 
         this.bonoAtaque = 0; 
         this.vidaMax = puntosDeVida;
+        this.objetoEquipado = objetoEquipado;
     }
 
     // Getters
@@ -62,8 +64,8 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     }
 
     public void curarAliado (int vidaEnviada){
-        if (puntosDeVida <= 0){ // Primero pregunta si el personaje tiene 0 de vida y si no, procede a curarlo
-            System.out.println("¡No ha hecho efecto!");
+        if (!estaVivo()){ // Primero pregunta si el personaje tiene 0 de vida y si no, procede a curarlo
+            System.out.println("¡No ha hecho efecto en " + nombre + "!");
         }
         else{
             puntosDeVida= vidaEnviada + puntosDeVida; 
@@ -89,6 +91,10 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
 
     public boolean estaVivo(){ // Se necesita saber si cada personaje esta vivo para ver si termina la partida
     return puntosDeVida > 0;
+    }
+
+    public boolean tieneItem(){
+        return objetoEquipado != null;
     }
 }
 

@@ -1,8 +1,8 @@
 public class Mago extends Personaje{ // Hecho por Alex Almonacid, Krishna Gallardo y Alonso Gonzalez
-    public final int costoMana;
+    private final int costoMana;
     
-    public Mago(String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa, int costoMana){
-        super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa);
+    public Mago(String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa, Item objetoEquipado, int costoMana){
+        super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa, objetoEquipado);
         this.costoMana = costoMana;
     }
 

@@ -1,6 +1,6 @@
 public class Guerrero extends Personaje{ // Hecho por Alex Almonacid, Krishna Gallardo y Alonso Gonzalez
-    public Guerrero(String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa){
-        super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa);
+    public Guerrero(String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa, Item objetoEquipado){
+        super(nombre, puntosDeVida, puntosDeMana, poderBase, defensa, objetoEquipado);
     }
 
     // Metodos
