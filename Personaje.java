@@ -106,8 +106,8 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
                     puntosDeVida = vidaMax;
                 }
             }
-        }
-        
+    }
+    
     public void defender(){
     aplicarBonoDefensa(10); // defender suma 10 de defensa hasta que se limpien los bonos
     System.out.println(nombre + " se pone en guardia.");
