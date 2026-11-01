@@ -9,7 +9,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     private int bonoAtaque; 
     private final int vidaMax; 
     private Item objetoEquipado;
-
+    
     public Personaje (String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa, Item objetoEquipado){
         this.nombre = nombre; 
         this.puntosDeVida = puntosDeVida; 
@@ -95,6 +95,11 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
 
     public boolean tieneItem(){ // Verifica si tiene item
         return objetoEquipado != null;
+    }
+
+    public void defender(){
+    aplicarBonoDefensa(10); // defender suma 10 de defensa hasta que se limpien los bonos
+    System.out.println(nombre + " se pone en guardia.");
     }
 }
 
