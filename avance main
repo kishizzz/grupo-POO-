@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Scanner; 
+
+public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllardo 
+    public static void main(String[] args){
+        System.out.println("bienvenido al juego!"); 
+        ArrayList<Personaje> equipo1 =  new ArrayList<>();
+        equipo1.add(new Guerrero( "Krishna", 100, 10, 100, 100, null )); 
+        equipo1.add(new Mago("Alonso", 100, 100, 100, 10, null, 10)); 
+        equipo1.add(new Sanador("Alex", 50, 50, 100, 10, null)); 
+        ArrayList<Personaje> equipo2 =  new ArrayList<>();
+        equipo2.add(new Guerrero( "Inmovil1", 100, 10, 100, 100, null ));
+        equipo2.add(new Mago("Inmovil2", 100, 100, 100, 10, null, 10)); 
+        equipo2.add(new Sanador("Inmovil3", 50, 50, 100, 10, null)); 
+        System.out.println("equipo 1");
+        mostrarEquipo(equipo1);
+        System.out.println("equipo 2");
+        mostrarEquipo(equipo2);
+        System.out.println(equipoConVida(equipo1));
+        Scanner lector = new Scanner (System.in); 
+        Personaje elegido = elegirPersonaje(equipo1, lector);
+        System.out.println("¿Que accion va a elegir?: ");
+        System.out.println("1. Atacar");
+        System.out.println("2. Defender");
+        System.out.println("3. Usar objeto");
+        int accion = lector.nextInt();
+        System.out.println("elegiste la opcion: " + accion);
+
+    }
+
+    public static void mostrarEquipo(ArrayList<Personaje> equipo){
+        for (Personaje p : equipo){
+            System.out.println(" nombre:" + p.getNombre() + ", puntos de vida:" + p.getPuntosDeVida() + ", puntos de mana:" + p.getPuntosDeMana()); 
+        }
+    }
+
+    public static boolean equipoConVida(ArrayList<Personaje> equipo ){
+        for (Personaje p : equipo){
+            if (p.estaVivo()){
+                return true; 
+            } 
+        }
+         return false;
+    }
+
+    public static Personaje elegirPersonaje( ArrayList<Personaje> equipo, Scanner lector ){
+        for (int i = 0; i <equipo.size(); i++){
+            System.out.println( i + 1 + ". " + equipo.get(i).getNombre() );
+        }
+        System.out.println("Elige un personaje:");
+        int opcion  = lector.nextInt();
+        return equipo.get( opcion - 1 );
+}
+
+    
+}
