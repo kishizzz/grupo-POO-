@@ -1,8 +1,8 @@
 public abstract class Item { // Hecho por Alex Almonacid, Krishna Gallardo, Alonso Gonzalez
 
-    protected  String nombreitem;
-    protected int puntos;
-    protected int duracion;
+    private  String nombreitem;
+    private int puntos;
+    private int duracion;
 
     public Item(String nombreitem, int puntos, int duracion){
         this.nombreitem = nombreitem;
@@ -10,5 +10,15 @@ public abstract class Item { // Hecho por Alex Almonacid, Krishna Gallardo, Alon
         this.duracion = duracion;
     }
     @SuppressWarnings("unused")
-    abstract void usaritem(); //metodo abstracto que hará todo lo de las pociones
+    abstract void usaritem(Personaje personaje); //metodo abstracto que hará todo lo de las pociones
+
+    public String getNombreitem(){
+        return nombreitem;
+    }
+    public int getPuntos(){
+        return puntos;
+    }
+    public int getDuracion(){
+        return duracion;
+    }
 }

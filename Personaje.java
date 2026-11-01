@@ -1,4 +1,3 @@
-
 public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo y Alonso Gonzalez
     private final String nombre; 
     private int puntosDeVida; 
@@ -21,6 +20,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         this.vidaMax = puntosDeVida;
         this.objetoEquipado = objetoEquipado;
     }
+    
 
     // Getters
 
@@ -97,6 +97,17 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         return objetoEquipado != null;
     }
 
+    public void curar(int puntos){  //el personaje se cura asimismo, se cura y se revisa si se curod de más, si si, vuelta a vida max
+        if (puntosDeVida == vidaMax){
+            System.out.println("No pasó nada");}
+            else{
+                puntosDeVida += puntos;
+                if(puntosDeVida>vidaMax){
+                    puntosDeVida = vidaMax;
+                }
+            }
+        }
+        
     public void defender(){
     aplicarBonoDefensa(10); // defender suma 10 de defensa hasta que se limpien los bonos
     System.out.println(nombre + " se pone en guardia.");
