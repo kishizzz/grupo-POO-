@@ -9,7 +9,7 @@ public class PocionVida extends Item { // Hecho por Alex Almonacid, Krishna Gall
       if (personaje.getPuntosDeVida()<=0){
         System.out.println("cagaste");
       } else {
-        personaje.curar(getPuntos());
+        personaje.curarAliado(getPuntos());
         System.out.println("Te curaste "+getPuntos()+" puntos de vida");
       }
     }
