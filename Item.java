@@ -12,7 +12,8 @@ public abstract class Item { // Hecho por Alex Almonacid, Krishna Gallardo, Alon
     @SuppressWarnings("unused")
     abstract void usaritem(Personaje personaje); //metodo abstracto que hará todo lo de las pociones
 
-    public String getNombreitem(){
+    //Getters
+    public String getNombreitem(){ 
         return nombreitem;
     }
     public int getPuntos(){

@@ -5,13 +5,13 @@ public class PocionDefensa extends Item { // Hecho por Alex Almonacid, Krishna G
 
   @Override 
   public void usaritem(Personaje personaje){
-    if(getDuracion() >0 ){
+    if(getDuracion() >0 ){          //se fija si la duracion de la pocion se acabó o no,
       personaje.aplicarBonoDefensa(getPuntos());
       System.out.println("+"+getPuntos()+"de defensa");
-   if (getDuracion() == 0){
+   if (getDuracion() == 0){      //si se acabó se quitan los efectos de la pocion
       personaje.limpiarBonos();
     }
-    //System.out.println("Usaste pocion de "+ nombreitem +", +"+puntos+" puntos de " + nombreitem + " por "+ duracion + "turnos");
+    
   }
 }
 }
