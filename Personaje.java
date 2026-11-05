@@ -10,6 +10,8 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
     private Item objetoEquipado;
     private int turnosRestantes;
 
+
+    //constructor
     public Personaje(String nombre, int puntosDeVida, int puntosDeMana, int poderBase, int defensa,
             Item objetoEquipado) {
         this.nombre = nombre;
@@ -44,8 +46,11 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
 
     // Metodos
 
+    //ejecuta una accion en un personaje determinado
     public abstract void ejecutarAccion(Personaje objetivo);
 
+
+    //permite que un personaje reciba daño
     public void recibirDaño(int ataque) {
         int dañoReal = ataque - (defensa + bonoDefensa);
         if (dañoReal < 0) {
@@ -57,6 +62,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         }
     }
 
+    //evalua si se puede gastar mana y si es asi, la resta de los puntos de mana actuales
     protected boolean gastarMana(int costo) {
         if (costo > puntosDeMana) {
             return false;
@@ -65,6 +71,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         return true;
     }
 
+    //permite curar a un aliado
     public void curarAliado(int vidaEnviada) {
         if (!estaVivo()) { // Primero pregunta si el personaje tiene 0 de vida y si no, procede a curarlo
         } else {
@@ -75,35 +82,35 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
 
         }
     }
-
+    //aplica el poco de ataque al personaje que lo tenga
     public void aplicarBonoAtaque(int mejoraAtaque) {
         bonoAtaque = bonoAtaque + mejoraAtaque;
     }
-
+    //aplica el poco de defensa al personaje que lo tenga
     public void aplicarBonoDefensa(int mejoraDefensa) {
         bonoDefensa = bonoDefensa + mejoraDefensa;
     }
-
+    //los bonos al ser temporales, despues de ciertos turnos deben desaparecer, esto los elimina 
     public void limpiarBonos() {
         bonoAtaque = 0;
         bonoDefensa = 0;
     }
-
+    //evalua si cierto personaje esta vivo 
     public boolean estaVivo() { // Se necesita saber si cada personaje esta vivo para ver si termina la partida
         return puntosDeVida > 0;
     }
-
+    //verifica si existe un objeto equipado 
     public boolean tieneItem() { // Verifica si tiene item
         return objetoEquipado != null;
     }
-
+    //activa los efectos 
     public void activarEfecto(int duracion) {
         turnosRestantes = duracion;
         if (turnosRestantes > 3) {
             turnosRestantes = 3;
         }
     }
-
+    //permite pasar de turno 
     public boolean pasarDeTurno() {
         if (turnosRestantes > 0) {
             turnosRestantes = turnosRestantes - 1;
@@ -114,7 +121,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         }
         return false; 
     }
-
+    //verifica si se puede usar un item, primero revisa que tenga un objeto equipado y si es asi, activa su efecto 
     public void usarObjeto() {
         if (!tieneItem()) {
             return;
@@ -123,7 +130,7 @@ public abstract class Personaje { // Hecho por Alex Almonacid, Krishna Gallardo 
         activarEfecto(objetoEquipado.getDuracion());
 
     }
-
+    //verifica que tenga un efecto activa y empieza a contar cuantos turnos le quedan al objeto
       public boolean tieneEfectoActivo(){
         return turnosRestantes > 0; 
 
