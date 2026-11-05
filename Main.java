@@ -7,13 +7,13 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         //creamos un lector para que lea todo lo que elija en jugador
         Scanner lector = new Scanner (System.in); 
         //instrucciones 
-        System.out.println("lease las siguientes instrucciones para jugar:");
-        System.out.println("1. empiece eligiendo las pociones del equipo 2, las pociones del equipo 1 vienen predeterminadas");
-        System.out.println("2. Empieza jugando el equipo 1, eliga un personaje cualquiera para empezar");
-        System.out.println("3. Con el personaje elegido, eliga una opcion");
-        System.out.println("4. Al realizar la accion, pasara el turno del siguiente equipo junto a sus estadisticas del momento");
-        System.out.println("5. Repita las instrucciones con el equipo 2 a su gusto");
-        System.out.println("6. Juegue hasta que uno de los equipos gane!");
+        System.out.println("Lea las siguientes instrucciones para jugar, por favor:");
+        System.out.println("1.- Empiece eligiendo las pociones del equipo 2, las pociones del equipo 1 vienen predeterminadas");
+        System.out.println("2.- Empieza jugando el equipo 1, eliga un personaje cualquiera para empezar");
+        System.out.println("3.- Con el personaje elegido, eliga una opción");
+        System.out.println("4.- Al realizar la accion, pasara el turno del siguiente equipo junto a sus estadisticas del momento");
+        System.out.println("5.- Repita las instrucciones con el equipo 2 a su gusto");
+        System.out.println("6.- ¡Juegue hasta que uno de los equipos gane!");
         ArrayList<Personaje> equipo1 =  new ArrayList<>(); //Declara una nueva lista 
         //implementamos el fabric 
         equipo1.add(FabricaDePersonajes.crear("Guerrero", "Krishna", new PocionVida("vida", 10, 3))); 
@@ -79,7 +79,7 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         if (p.estaVivo()){
             return p; 
         }
-        System.out.println("el personaje no esta vivo! intentalo con otro!");
+        System.out.println("¡El personaje no esta vivo! ¡Intentalo con otro!");
 
         }
 }
@@ -91,10 +91,10 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
                 int valor = lector.nextInt();
                 if (valor >= min && valor <= max) {
                     return valor; 
-            } System.out.println("fuera de rango ");
+            } System.out.println("¡Fuera de rango! ");
         }else {
                 lector.next(); 
-                System.out.println("no es ingresable"); 
+                System.out.println("No es ingresable."); 
             }
         }
     }
@@ -103,16 +103,16 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         //le avisa a cada jugador que pasa su turno  
          for (Personaje p : aliados){
             if (p.pasarDeTurno()){
-                System.out.println(p.getNombre() + ", su bono ha terminado");
+                System.out.println(p.getNombre() + ", su bono ha terminado.");
             }
         }
          Personaje elegido = elegirPersonaje(aliados, lector);
-        System.out.println("¿Que accion va a elegir?: ");
+        System.out.println("¿Qué acción va a elegir?: ");
         System.out.println("1. Atacar");
         System.out.println("2. Defender");
         System.out.println("3. Usar objeto");
         int accion = leerEntero(lector, 1, 3);
-        System.out.println("elegiste la opcion: " + accion);
+        System.out.println("Elegiste la opcion: " + accion);
         if (accion == 1){
             if (elegido instanceof Sanador){
                 Personaje objetivo = elegirPersonaje(aliados, lector); 
@@ -126,7 +126,7 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
                 elegido.aplicarBonoDefensa(10); 
                 elegido.activarEfecto(1);
             } else {
-                System.out.println("ya hay efecto activo");
+                System.out.println("¡Ya hay efecto activo!");
             }
         }else {
             elegido.usarObjeto();
@@ -135,9 +135,9 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
 
     public static Item elegirItem(Scanner lector){
         System.out.println("eliga una pocion para su personaje!");
-        System.out.println("1. pocion de ataque");
-        System.out.println("2. pocion de defensa");
-        System.out.println("3. pocion de vida");
+        System.out.println("1. Pocion de ataque");
+        System.out.println("2. Pocion de defensa");
+        System.out.println("3. Pocion de vida");
         int pocion = leerEntero(lector, 1, 3); 
         if (pocion == 1){
             return new PocionAtaque("fuerza", 20, 3); 
