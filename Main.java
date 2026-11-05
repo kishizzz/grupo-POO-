@@ -20,25 +20,25 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         equipo1.add(FabricaDePersonajes.crear("Sanador", "Alonso", new PocionDefensa("defensa", 20, 3)));
         equipo1.add(FabricaDePersonajes.crear("Mago", "Alex", new PocionAtaque("Fuerza", 20, 3)));
         ArrayList<Personaje> equipo2 = new ArrayList<>(); //Declara una nueva lista 
-        System.out.println("elige un objeto para krishna mala");
+        System.out.println("Elige un objeto para Krishna mala");
         equipo2.add(FabricaDePersonajes.crear("Guerrero", "Krishna mala", elegirItem(lector)));
-        System.out.println("elige un objeto para alonso malo");
+        System.out.println("Elige un objeto para Alonso malo");
         equipo2.add(FabricaDePersonajes.crear("Sanador", "Alonso malo", elegirItem(lector)));
-        System.out.println("elige un objeto para alex malo");
+        System.out.println("Elige un objeto para Alex malo");
         equipo2.add(FabricaDePersonajes.crear("Mago", "Alex malo", elegirItem(lector)));
         //muestra ambos equipos
-       System.out.println("equipo 1");
+       System.out.println("- Equipo 1 -");
         mostrarEquipo(equipo1);
-        System.out.println("equipo 2");
+        System.out.println("- Equipo 2 -");
         mostrarEquipo(equipo2);
         //aqui evalua que ambos equipos sigan con vida de modo que los turnos puedan seguir pasando una y otra vez
         while (equipoConVida(equipo1) && equipoConVida(equipo2)){
-            System.out.println("turno del equipo 1!");
+            System.out.println("¡Turno del equipo 1!");
             mostrarEquipo(equipo1);
             mostrarEquipo(equipo2);
             turno(equipo1, equipo2, lector);
             if (equipoConVida(equipo2)){
-                System.out.println("turno del equipo 2!");
+                System.out.println("¡Turno del equipo 2!");
                 mostrarEquipo(equipo1);
                 mostrarEquipo(equipo2);
                 turno(equipo2, equipo1, lector);
@@ -46,9 +46,9 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         }
             //implementamos un if con lo que sucederia si solo uno de los equipos quedara con vida 
         if (equipoConVida(equipo1)){
-            System.out.println("felicidades gano el equipo uno!");
+            System.out.println("¡Felicidades gano el equipo uno!");
         } else {
-            System.out.println("felicidades gano el equipo 2!");
+            System.out.println("¡Felicidades gano el equipo 2!");
         }
 
     }
@@ -86,7 +86,7 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
     //aplicamos un lector que evalua si lo que responde el jugador es un entero y si este esta dentro de las opciones
     public static int leerEntero(Scanner lector, int min, int max){
         while (true){
-            System.out.println("elige una opcion entre: " + min + " y " + max); 
+            System.out.println("Elige una opcion entre: " + min + " y " + max); 
             if (lector.hasNextInt()) { //aqui se implemento un lector que revisara si la respuesta añadida es un entero 
                 int valor = lector.nextInt();
                 if (valor >= min && valor <= max) {
@@ -134,7 +134,7 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
 }
 
     public static Item elegirItem(Scanner lector){
-        System.out.println("eliga una pocion para su personaje!");
+        System.out.println("¡Eliga una pocion para su personaje!");
         System.out.println("1. Pocion de ataque");
         System.out.println("2. Pocion de defensa");
         System.out.println("3. Pocion de vida");
