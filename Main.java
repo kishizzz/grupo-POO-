@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllardo 
     public static void main(String[] args){
-        System.out.println("bienvenido al juego!"); 
+        System.out.println("¡Bienvenido al juego!"); 
         //creamos un lector para que lea todo lo que elija en jugador
         Scanner lector = new Scanner (System.in); 
         //instrucciones 
@@ -112,7 +112,7 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
         System.out.println("2. Defender");
         System.out.println("3. Usar objeto");
         int accion = leerEntero(lector, 1, 3);
-        System.out.println("Elegiste la opcion: " + accion);
+        System.out.println("Elegiste la opción: " + accion);
         if (accion == 1){
             if (elegido instanceof Sanador){
                 Personaje objetivo = elegirPersonaje(aliados, lector); 
@@ -135,9 +135,9 @@ public class Main { //hecho por Alex Almonacid, Alonso Gonzales y Krishna Gllard
 
     public static Item elegirItem(Scanner lector){
         System.out.println("¡Eliga una pocion para su personaje!");
-        System.out.println("1. Pocion de ataque");
-        System.out.println("2. Pocion de defensa");
-        System.out.println("3. Pocion de vida");
+        System.out.println("1.- Pocion de ataque");
+        System.out.println("2.- Pocion de defensa");
+        System.out.println("3.- Pocion de vida");
         int pocion = leerEntero(lector, 1, 3); 
         if (pocion == 1){
             return new PocionAtaque("fuerza", 20, 3); 
